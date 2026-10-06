@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_pastjobs_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff5f5f5"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5.0dip"
+        android:background="#fff5f5f5"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="5.0dip"
+        app:cardElevation="3.0dip"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical">
+
+                <com.instaguard.provider.CustomViews.CustomEditText
+                    android:id="@+id/edt_document_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toStartOf="@+id/iv_delete"
+                    android:clickable="false"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:paddingEnd="10dp"
+                    android:singleLine="true"
+                    android:text="@string/manage_document_title"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelTextColor="@color/colorPrimaryDark"
+                    app:met_hideUnderline="true"
+                    app:met_textColor="@color/colorPrimaryDark"
+                    app:met_textColorHint="#838383"
+                    tools:ignore="RtlSymmetry" />
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/edt_document_name"
+                    android:layout_alignBottom="@+id/edt_document_name"
+                    android:layout_alignParentEnd="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_delete_black"
+                    android:visibility="invisible" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_manage_views"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/edt_document_name"
+                    android:layout_marginTop="5sp"
+                    android:scaleType="fitCenter"
+                    app:actualImageScaleType="fitXY"
+                    app:placeholderImage="@mipmap/doc_off"
+                    app:placeholderImageScaleType="fitXY" />
+
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_view_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:background="#8D000000"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="View"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_reject_lyt"
+                android:padding="2dp"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5sp"
+                android:background="#D2FF5722"
+                android:orientation="vertical">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/txt_reject_reason"
+                    android:layout_weight="1"
+                    android:maxLength="500"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Reject :-- "
+                    android:textColor="@color/black"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

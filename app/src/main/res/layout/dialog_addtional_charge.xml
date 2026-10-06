@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#6A000000"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:id="@+id/ll_parent_lyt_AdditionalCharge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.0dip"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_addcharge_title_area_add_charge"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0.0dip"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="5.0dip"
+                            android:paddingBottom="5.0dip">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_would_like_hint_add_charge"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:text="@string/additional_charge_would_you_like_to_add_addtional_charge_and_discount"
+                                android:textAlignment="textStart"
+                                android:textColor="#ff292929"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/iv_cancel_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:contentDescription="@string/todo"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_close_black"
+                                app:tint="@color/colorPrimaryDark" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_current_charge_label_add_charge"
+                                android:layout_width="0.0dip"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:text="@string/additional_charge_current_charger"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+                            <!-- android:text="Current charge(10) * Level charge(10) + visit charge(5)"-->
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_current_charge_label_1_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginStart="5.0dip"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="start|center"
+                                android:text="Rs"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_current_charge_add_charge"
+                                android:layout_width="50.0dip"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:padding="5.0dip"
+                                android:text="00.00"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp"
+                                tools:ignore="RtlSymmetry" />
+
+                            <ImageView
+                                android:layout_width="40.0dip"
+                                android:layout_height="40.0dip"
+                                android:layout_gravity="end"
+                                android:layout_weight="0.0"
+                                android:contentDescription="@string/todo"
+                                android:src="@mipmap/ic_edit"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7.0dip"
+                            android:orientation="vertical"
+                            android:padding="0.0dip">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_agent_charge_label"
+                                    android:layout_width="0.0dip"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start|center"
+                                    android:text="@string/total_guard_cost"
+                                    android:textAlignment="viewStart"
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                    android:textColor="#ff292929"
+                                    android:textSize="14sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_agent_charge_label_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginStart="5.0dip"
+                                    android:layout_marginEnd="5dp"
+                                    android:gravity="start|center"
+                                    android:paddingBottom="3dp"
+                                    android:text="Rs"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff292929"
+                                    android:textSize="14sp" />
+
+                                <LinearLayout
+                                    android:layout_width="50.0dip"
+                                    android:layout_height="wrap_content">
+
+                                    <com.instaguard.provider.CustomViews.CustomEditText
+                                        android:id="@+id/txt_additional_agent_charge"
+                                        android:layout_width="50.0dip"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="start"
+                                        android:clickable="false"
+                                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:hint="70"
+                                        android:imeOptions="actionNone"
+                                        android:inputType="textWebEmailAddress"
+                                        android:maxLength="25"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/black"
+                                        android:textSize="14sp"
+                                        app:met_floatingLabel="none"
+                                        app:met_floatingLabelAlwaysShown="false"
+                                        app:met_floatingLabelAnimating="true"
+                                        app:met_floatingLabelTextColor="@color/colorPrimary"
+                                        app:met_hideUnderline="true"
+                                        app:met_textColorHint="@color/colorPrimary" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <!--Total Day-->
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7.0dip"
+                            android:orientation="vertical"
+                            android:padding="0.0dip">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_day_charge_label"
+                                    android:layout_width="0.0dip"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start|center"
+                                    android:text="Total Days Cost"
+                                    android:textAlignment="viewStart"
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                    android:textColor="#ff292929"
+                                    android:textSize="14sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_day_charge_label_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginStart="5.0dip"
+                                    android:layout_marginEnd="5dp"
+                                    android:gravity="start|center"
+                                    android:paddingBottom="3dp"
+                                    android:text="Rs"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff292929"
+                                    android:textSize="14sp" />
+
+                                <LinearLayout
+                                    android:layout_width="50.0dip"
+                                    android:layout_height="wrap_content">
+
+                                    <com.instaguard.provider.CustomViews.CustomEditText
+                                        android:id="@+id/txt_additional_day_charge"
+                                        android:layout_width="50.0dip"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:clickable="false"
+                                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:hint="70"
+                                        android:imeOptions="actionNone"
+                                        android:inputType="textWebEmailAddress"
+                                        android:maxLength="25"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/black"
+                                        android:textSize="14sp"
+                                        app:met_floatingLabel="none"
+                                        app:met_floatingLabelAlwaysShown="false"
+                                        app:met_floatingLabelAnimating="true"
+                                        app:met_floatingLabelTextColor="@color/colorPrimary"
+                                        app:met_hideUnderline="true"
+                                        app:met_textColorHint="@color/colorPrimary" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_distance_lyt_add_charge"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/gray_very_light"
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_distance_driver_label_add_charge"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="start|center"
+                                    android:text="Total Distance"
+                                    android:textAlignment="viewStart"
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                                    android:textColor="#ff292929"
+                                    android:textSize="14sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="fill_parent"
+                                    android:gravity="start|center"
+                                    android:text="-"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff292929"
+                                    android:visibility="gone" />
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end|center"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center|end">
+
+                                    <com.instaguard.provider.CustomViews.CustomTextView
+                                        android:id="@+id/txt_distance_label_km_add_charge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignTop="@+id/txt_distance_charge_add_charge"
+                                        android:layout_alignBottom="@+id/txt_distance_charge_add_charge"
+                                        android:layout_marginStart="5.0dip"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_toStartOf="@+id/txt_distance_charge_add_charge"
+                                        android:gravity="end|center"
+                                        android:text="Rs"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="#ff292929"
+                                        android:textSize="14sp"
+                                        android:visibility="visible" />
+
+                                    <com.instaguard.provider.CustomViews.CustomTextView
+                                        android:id="@+id/txt_distance_charge_add_charge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:gravity="start|center"
+                                        android:padding="3.0dip"
+                                        android:text="00.0"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="#ff292929"
+                                        android:textSize="14sp"
+                                        tools:ignore="RtlSymmetry" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_distance_priceper_km_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:padding="3dp"
+                                android:text="Price per km = 00 * 00km ="
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="13sp"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_material_fee_label_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:text="@string/additional_charge_material_fee"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_material_fee_label_1_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginStart="5.0dip"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="start|center"
+                                android:paddingBottom="3dp"
+                                android:text="Rs"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <com.instaguard.provider.CustomViews.CustomEditText
+                                    android:id="@+id/edt_material_fee_add_charge"
+                                    android:layout_width="50.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:digits="0123456789."
+                                    android:hint="00.00"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:maxLines="1"
+                                    android:singleLine="true" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/matrialeditImgView_add_charge"
+                                android:layout_width="40.0dip"
+                                android:layout_height="40.0dip"
+                                android:layout_gravity="end"
+                                android:layout_weight="0.0"
+                                android:contentDescription="@string/todo"
+                                android:src="@mipmap/ic_edit"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.0dip"
+                            android:orientation="horizontal">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_misc_fee_label_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:text="@string/additional_charge_misc_fee"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_misc_fee_label_1_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginStart="5.0dip"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="start|center"
+                                android:paddingBottom="3dp"
+                                android:text="Rs"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <com.instaguard.provider.CustomViews.CustomEditText
+                                    android:id="@+id/edt_misc_fee_add_charge"
+                                    android:layout_width="50.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:digits="0123456789."
+                                    android:hint="00.00"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:maxLines="1"
+                                    android:singleLine="true" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/miseeditImgView_add_charge"
+                                android:layout_width="40.0dip"
+                                android:layout_height="40.0dip"
+                                android:layout_gravity="end"
+                                android:layout_weight="0.0"
+                                android:contentDescription="@string/todo"
+                                android:src="@mipmap/ic_edit"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.0dip"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_discount_driver_label_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginStart="5.0dip"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:text="@string/additional_charge_driver_discount"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginStart="5.0dip"
+                                android:gravity="start|center"
+                                android:paddingBottom="3dp"
+                                android:text="-"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_discount_driver_label_1_add_charge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginStart="5.0dip"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="start|center"
+                                android:paddingBottom="3dp"
+                                android:text="Rs"
+                                android:textAlignment="viewStart"
+                                android:textColor="#ff292929"
+                                android:textSize="14sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <com.instaguard.provider.CustomViews.CustomEditText
+                                    android:id="@+id/edt_discount_driver_add_charge"
+                                    android:layout_width="50.0dip"
+                                    android:layout_height="wrap_content"
+                                    android:digits="0123456789."
+                                    android:hint="00.00"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="0" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/discounteditImgView_add_charge"
+                                android:layout_width="40.0dip"
+                                android:layout_height="40.0dip"
+                                android:layout_gravity="end"
+                                android:layout_weight="0.0"
+                                android:clickable="true"
+                                android:contentDescription="@string/todo"
+                                android:src="@mipmap/ic_edit"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffd8d8d8"
+                    android:orientation="horizontal"
+                    android:paddingStart="8.0dip"
+                    android:paddingTop="10.0dip"
+                    android:paddingEnd="5.0dip"
+                    android:paddingBottom="10.0dip">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_final_total_label_add_charge"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="5.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="start|center"
+                        android:text="@string/additional_charge_total"
+                        android:textAlignment="viewStart"
+                        android:textColor="#ff292929"
+                        android:textSize="16sp" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_final_total_dollar_add_charge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start"
+                        android:singleLine="true"
+                        android:text="Rs"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_final_total_add_charge"
+                        android:layout_width="55dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start"
+                        android:hint="00.00"
+                        android:singleLine="true"
+                        android:text="0"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_surge_appiled_additonal_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="10.0dip"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:padding="5.0dip"
+                    android:textAllCaps="true"
+                    android:textColor="#fff"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10.0dip"
+                    android:gravity="right|end"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlHardcoded">
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_skip_additonal_charge"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5.0dip"
+                        android:layout_marginEnd="5.0dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:backgroundTint="@android:color/darker_gray"
+                        android:padding="5.0dip"
+                        android:text="@string/additional_charge_skip"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white" />
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_submit_additonal_charge"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5.0dip"
+                        android:layout_marginEnd="5.0dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:padding="5.0dip"
+                        android:text="@string/additional_charge_submit"
+                        android:textAllCaps="true"
+                        android:textColor="#fff" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

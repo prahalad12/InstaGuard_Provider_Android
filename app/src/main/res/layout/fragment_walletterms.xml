@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_support_header"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray_common"
+        android:orientation="vertical">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_support"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    style="@style/AppThemeToolBar"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_backs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow"
+                    android:visibility="invisible" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_walletterms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_backs"
+                    android:layout_alignBottom="@+id/imgbtn_backs"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_toStartOf="@+id/imgbtn_backs"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:gravity="center"
+                    android:text="@string/my_wallet_terms_amp_privacy_policy_text"
+                    style="@style/AppThemeToolBar"
+                    tools:ignore="MissingPrefix" />
+
+            </RelativeLayout>
+
+
+        </android.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/ll_description_walletterms"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

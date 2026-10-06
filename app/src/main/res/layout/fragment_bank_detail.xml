@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                style="@style/AppThemeToolBar"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:layout_toStartOf="@+id/iv_menu_profile"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:foregroundGravity="center"
+                android:gravity="center|start"
+                android:text="@string/bank_details_title"
+                style="@style/AppThemeToolBar"
+                tools:ignore="MissingPrefix" />
+
+            <ImageView
+                android:id="@+id/iv_menu_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_menu_vertical"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded" />
+        </RelativeLayout>
+
+    </android.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_setting"
+        android:background="@color/bg_gray_common">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_payment_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:digits="._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:hint="@string/bankdetails_payment_email_hint"
+                        android:inputType="textEmailAddress"
+                        android:paddingEnd="10dp"
+                        android:textCursorDrawable="@color/black"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_helperTextColor="@color/black"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_underlineColor="@color/hintgray"
+                        app:met_textColorHint="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_clear_payment_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/edt_payment_email"
+                        android:layout_alignBottom="@+id/edt_payment_email"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_circle_close"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_payment_bank_ac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:hint="@string/bankdetails_bank_account_holder_name_hint"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@color/black"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_helperTextColor="@color/black"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_textColorHint="@color/hintgray"
+                        app:met_underlineColor="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_clear_payment_bank_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/edt_payment_bank_ac"
+                        android:layout_alignBottom="@+id/edt_payment_bank_ac"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_circle_close"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_payment_ac_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:digits=" ._abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@ "
+                        android:hint="@string/bankdetails_account_number_hint"
+                        android:inputType="number"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textCursorDrawable="@color/black"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_helperTextColor="@color/black"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_textColorHint="@color/hintgray"
+                        app:met_underlineColor="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_clear_payment_ac_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/edt_payment_ac_num"
+                        android:layout_alignBottom="@+id/edt_payment_ac_num"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_circle_close"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_payment_bank_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:hint="@string/bankdetails_bank_location_hint"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textCursorDrawable="@color/black"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_helperTextColor="@color/black"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_textColorHint="@color/hintgray"
+                        app:met_underlineColor="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_clear_payment_bank_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/edt_payment_bank_location"
+                        android:layout_alignBottom="@+id/edt_payment_bank_location"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_circle_close"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_payment_bank_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:hint="@string/bankdetails_bank_name_hint"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textCursorDrawable="@color/black"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_helperTextColor="@color/black"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_textColorHint="@color/hintgray"
+                        app:met_underlineColor="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_clear_payment_bank_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/edt_payment_bank_name"
+                        android:layout_alignBottom="@+id/edt_payment_bank_name"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_circle_close"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_payment_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:hint="@string/bankdetails_bic_swift_code_hint"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textCursorDrawable="@color/black"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:met_baseColor="@color/black"
+                        app:met_errorColor="@android:color/holo_red_dark"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/black"
+                        app:met_helperTextColor="@color/black"
+                        app:met_primaryColor="@color/black"
+                        app:met_textColor="@color/black"
+                        app:met_textColorHint="@color/hintgray"
+                        app:met_underlineColor="@color/hintgray"
+                        tools:ignore="RtlSymmetry" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_clear_payment_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/edt_payment_code"
+                        android:layout_alignBottom="@+id/edt_payment_code"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:contentDescription="@string/todo"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_circle_close"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_updatesettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:contentDescription="@string/todo"
+                        android:text="@string/forgetpassword_submit"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+

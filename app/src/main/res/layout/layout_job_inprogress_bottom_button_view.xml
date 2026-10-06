@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_btn_slide_trip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/colorAccent_light"
+    android:elevation="50dp"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:showIn="@layout/layout_job_inprogress"
+    tools:targetApi="lollipop">
+
+    <LinearLayout
+        android:id="@+id/ll_start_trip"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/bg_rect_filled_colorprimary"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="callClickView_Ontheway"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_start_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:textAllCaps="true"
+            android:paddingEnd="2dp"
+            android:onClick="callClickView_Ontheway"
+            android:text="@string/slide_to_start_trip"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0"
+            android:contentDescription="@string/todo"
+            android:onClick="callClickView_Ontheway"
+            android:src="@drawable/ic_chevron_right_white"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_arrive_trip"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/bg_rect_filled_colorprimary"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:onClick="callClickView_Arrive"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_arrive_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="2dp"
+            android:onClick="callClickView_Arrive"
+            android:text="@string/slide_to_arrive_trip"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_chevron_right_white"
+            android:onClick="callClickView_Arrive"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_Begin_job_trip"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/bg_rect_filled_colorprimary"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:onClick="callClickView_Begin"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_begin_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="callClickView_Begin"
+            android:textAllCaps="true"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="2dp"
+            android:text="@string/slide_to_begin_job"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0"
+            android:onClick="callClickView_Begin"
+
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_chevron_right_white"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_end_job_trip"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/bg_rect_filled_colorprimary"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:onClick="callClickView_End"
+        android:visibility="gone">
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_end_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:paddingEnd="2dp"
+            android:textAllCaps="true"
+            android:text="@string/slide_to_end_job"
+            android:onClick="callClickView_End"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0"
+            android:contentDescription="@string/todo"
+            android:onClick="callClickView_End"
+            android:src="@drawable/ic_chevron_right_white"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/rl__g"
+        layout="@layout/layout_google_ads_view" />
+
+</LinearLayout>

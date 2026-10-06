@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".Fragments.PayoutsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cb"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currentBlc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_balance"
+            android:layout_margin="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/blc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/currentBlc"
+            app:layout_constraintStart_toStartOf="@+id/currentBlc"
+            android:layout_marginTop="14sp"
+            android:text="50"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8sp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white_"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb"
+        app:layout_constraintBottom_toBottomOf="@+id/cb">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/wd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@string/withdrawal_money"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/view_separate"
+                android:layout_width="120dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/img_seperator_black"
+                app:layout_constraintStart_toStartOf="@+id/wd"
+                app:layout_constraintEnd_toEndOf="@+id/wd"
+                app:layout_constraintTop_toBottomOf="@+id/wd"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12sp"
+                android:gravity="center"
+                android:text="@string/how_much_would_you_like_to_withdrawal_money"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/view_separate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edt_custom_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:hint="@string/enter_custom_amount"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:met_baseColor="@color/black"
+                app:met_clearButton="true"
+                app:met_errorColor="@android:color/holo_red_dark"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelAlwaysShown="true"
+                app:met_floatingLabelAnimating="true"
+                app:met_floatingLabelTextColor="@color/black"
+                app:met_helperTextAlwaysShown="true"
+                app:met_helperTextColor="@color/colorPrimary"
+                app:met_primaryColor="@color/black"
+                app:met_textColor="@color/black"
+                app:met_textColorHint="@color/black"
+                app:met_underlineColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_money"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/buttonshape"
+                android:gravity="center"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:text="@string/withdrawal_money"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                tools:ignore="RelativeOverlap"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_custom_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="@color/colorPrimary"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/paymentStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center"
+        android:textColor="@color/holo_red_dark"
+        app:layout_constraintTop_toBottomOf="@+id/cv"
+        app:layout_constraintStart_toStartOf="@+id/cv"
+        app:layout_constraintEnd_toEndOf="@+id/cv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="10dp"
+    android:orientation="horizontal"
+    tools:targetApi="lollipop">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-4.0dip"
+        android:layout_marginTop="-4.0dip"
+        android:layout_marginEnd="-4.0dip"
+        android:padding="1.0dip"
+        app:cardBackgroundColor="#FFF"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100.0dip"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:maxHeight="100.0dip"
+                android:orientation="vertical"
+                android:padding="10.0dip"
+                android:weightSum="2">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_Pickup_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:maxHeight="100.0dip"
+                    android:maxLines="4"
+                    android:padding="5.0dip"
+                    android:text=""
+                    android:textColor="#ff323232"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_drop_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:maxHeight="100.0dip"
+                    android:maxLines="4"
+                    android:padding="5.0dip"
+                    android:text=""
+                    android:textColor="#ff323232"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_strip_navigations"
+                android:layout_width="23.5dip"
+                android:layout_height="100.0dip"
+                android:contentDescription="@string/todo"
+                android:src="@mipmap/ic_navigate_left_strip"
+                android:visibility="gone"
+                app:tint="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/ll_navigation_btn_header"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_strip_navigation"
+                    android:layout_width="23.5dip"
+                    android:layout_height="100.0dip"
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/ic_navigate_left_strip"
+                    android:visibility="gone"
+                    app:tint="#ff7f3a" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_btn_navigation_header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
+
+                        <ImageView
+                            android:id="@+id/iv_navigation_icon"
+                            android:layout_width="32.0dip"
+                            android:layout_height="32.0dip"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/todo"
+                            android:src="@mipmap/ic_loc"
+                            app:tint="@color/white" />
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            android:id="@+id/txt_navigation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6.0dip"
+                            android:text="@string/navigate"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+    <!--            <LinearLayout
+                    android:id="@+id/ll_navigation_btn_header"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.4"
+                    android:visibility="visible"
+                    android:weightSum="2"
+                    android:background="@color/colorPrimaryDark"
+                    android:orientation="vertical">
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:background="@drawable/bg_rect_border_gw_maps"
+                        android:text="@string/google"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="10sp"
+                        android:paddingEnd="10sp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/white"
+                        android:drawableStart="@drawable/ic_google_map"
+                        android:textColor="@color/white"
+                        tools:targetApi="m"
+                        tools:ignore="NestedWeights" />
+
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_waze"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:background="@drawable/bg_rect_border_gw_maps"
+                        android:text="@string/waze"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingStart="10sp"
+                        android:layout_weight="1"
+                        android:paddingEnd="10sp"
+                        android:textSize="14sp"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/white"
+                        android:drawableStart="@drawable/ic_waze_map"
+                        android:textColor="@color/white"
+                        tools:targetApi="m" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_strip_navigation"
+                        android:layout_width="23.5dip"
+                        android:layout_height="100.0dip"
+                        android:visibility="gone"
+                        android:src="@mipmap/ic_navigate_left_strip"
+                        android:tint="@color/colorPrimary"
+                        android:contentDescription="@string/todo" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/rl_btn_navigation_header"
+                        android:background="@color/colorPrimary"
+                        android:visibility="gone"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:orientation="vertical"
+                            tools:ignore="UselessParent">
+
+                            <ImageView
+                                android:id="@+id/iv_navigation_icon"
+                                android:layout_width="32.0dip"
+                                android:layout_height="32.0dip"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/ic_loc"
+                                android:tint="@color/black"
+                                android:contentDescription="@string/todo" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_navigation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                 android:layout_gravity="center"
+                                android:layout_marginTop="6.0dip"
+                                android:text="@string/navigate"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+    -->

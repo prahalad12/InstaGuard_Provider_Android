@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+     android:orientation="vertical"
+    tools:ignore="UselessParent">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_signupotp"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <ImageButton
+            android:id="@+id/imgbtn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            style="@style/AppThemeToolBar"
+            android:background="@null"
+            android:src="@drawable/ic_close_white" />
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:gravity="center"
+            style="@style/AppThemeToolBar"
+            android:text="@string/navigation_title"
+            tools:ignore="MissingPrefix" />
+
+    </android.widget.Toolbar>
+
+    <com.instaguard.provider.CustomViews.CustomButton
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:background="@drawable/bg_rect_border"
+        android:text="@string/google"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_google_map"
+        android:textColor="@color/colorPrimaryDark"
+        tools:targetApi="m"
+        tools:ignore="RtlSymmetry" />
+
+
+    <com.instaguard.provider.CustomViews.CustomButton
+        android:id="@+id/btn_waze"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:background="@drawable/bg_rect_border"
+        android:text="@string/waze"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_waze_map"
+        android:textColor="@color/colorPrimaryDark"
+        tools:ignore="RtlSymmetry"
+        tools:targetApi="m" />
+
+    <com.instaguard.provider.CustomViews.CustomButton
+        android:id="@+id/btn_inapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:background="@drawable/bg_rect_border"
+        android:text="InApp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_inapp_route"
+        android:textColor="@color/colorPrimaryDark"
+        tools:ignore="RtlSymmetry"
+        tools:targetApi="m" />
+
+    <com.instaguard.provider.CustomViews.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+</RelativeLayout>

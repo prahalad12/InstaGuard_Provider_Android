@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:background="@color/white"
+    android:padding="8dp">
+
+    <com.instaguard.provider.CustomViews.CustomTextView
+        android:id="@+id/textView_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/select_town"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/secondary_text_light" />
+
+    <com.instaguard.provider.CustomViews.CustomEditText
+        android:id="@+id/searchInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_title"
+        android:maxLines="1"
+        android:hint="@string/search"
+        android:singleLine="true"
+        android:textColor="@android:color/primary_text_light_nodisable" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cityListRV"
+        android:layout_below="@+id/searchInput"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/adapter_citylist"/>
+
+    <com.instaguard.provider.CustomViews.CustomTextView
+        android:id="@+id/textView_noresult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/country_code_picker_no_result_found"
+        android:visibility="gone"
+        android:textColor="@android:color/primary_text_light" />
+
+</RelativeLayout>

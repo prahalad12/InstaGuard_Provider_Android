@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#2a2f83</color>   <!-- ***** NOTE Gradient Style ******-->
+    <color name="colorPrimaryDark">#832b67</color>
+    <color name="colorAccent">#832b67</color>   <!-- ***** NOTE Gradient Style ******-->
+
+    <color name="colorPrimary_light">#552A2F83</color>
+    <color name="colorAccent_light">#77832b67</color>
+
+    <color name="colorGreen">#BFFF00</color>
+
+    <color name="colorBlacktransperant">#99000000</color>
+    <color name="colorprogresstransparent">#00FFFFFF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_">#F8F8F8</color>
+    <color name="black">#181818</color>
+    <color name="blacks">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey_80">#37474F</color>
+
+    <color name="nav_background">#FFF</color>
+    <color name="nav_bottom_text">#FFF</color>
+    <color name="nav_text">#000</color>
+    <color name="map_header_text">#000000</color>
+
+    <color name="primary_blue_light_alpha">#1F005ABA</color>
+
+
+    <!--Custom Dialog-->
+    <color name="dialog_bg_color">#FFFFFF</color>
+    <color name="dialog_bg_border">#BDBDBD</color>
+    <color name="text_color_bright">#FFFFFF</color>
+    <color name="text_color_dark">#616161</color>
+
+    <color name="hintgray">#5f000000</color>
+    <color name="bg_gray_common">#FFF</color>
+
+    <color name="darker_gray">#000</color>
+    <color name="field_text_color_error">#FF0000</color>
+    <color name="request_screen_background">#ff333333</color>
+    <color name="text_color_error">#a9ff0000</color>
+    <color name="text_color_success">#f02b7c1d</color>
+    <color name="holo_green_dark">#ff669900</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+    <color name="darker_grays">#aaa</color>
+
+    <!--Switch-->
+    <color name="blue">#123256</color>
+    <color name="gray">#444444</color>
+    <color name="gray_light">#BBBBBB</color>
+    <color name="gray_very_light">#DDDDDD</color>
+    <color name="gray_black">#9B9B9B</color>
+    <!--Switch-->
+
+
+    <!-- A light Holo shade of blue. Equivalent to #ff33b5e5. -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <!-- A light Holo shade of gray. Equivalent to #33999999. -->
+    <color name="holo_gray_light">#33999999</color>
+    <!-- A light Holo shade of green. Equivalent to #ff99cc00. -->
+    <color name="holo_green_light">#ff99cc00</color>
+    <!-- A light Holo shade of red. Equivalent to #ffff4444. <-->
+    <color name="holo_red_light">#ffff4444</color>
+    <!-- A dark Holo shade of blue. Equivalent to #ff0099cc -->
+    <color name="holo_blue_dark">#ff0099cc</color>
+
+    <!-- A Holo shade of purple. Equivalent to #ffaa66cc -->
+    <color name="holo_purple">#ffaa66cc</color>
+    <!-- A light Holo shade of orange. Equivalent to #ffffbb33. -->
+    <color name="holo_orange_light">#ffffbb33</color>
+    <!-- A dark Holo shade of orange. Equivalent to ffff8800. -->
+    <color name="holo_orange_dark">#ffff8800</color>
+    <!-- A really bright Holo shade of blue. Equivalent to #ff00ddff. -->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <!-- A really bright Holo shade of gray. Equivalent to #33cccccc. -->
+    <color name="holo_gray_bright">#33CCCCCC</color>
+
+    <color name="gray_very_very_light">#70DDDDDD</color>
+
+
+
+</resources>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_forgetpassword"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@null"
+                style="@style/AppThemeToolBar"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <ImageButton
+                android:id="@+id/imgbtn_backs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow"
+                android:visibility="invisible" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_backs"
+                android:layout_alignBottom="@+id/imgbtn_backs"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/imgbtn_backs"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:gravity="center"
+                android:text="@string/manage_document_title"
+                style="@style/AppThemeToolBar"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+    </android.widget.Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_forgetpassword"
+        android:background="@color/bg_gray_common"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10.0dip">
+
+                    <com.instaguard.provider.CustomViews.CustomEditText
+                        android:id="@+id/edt_document_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:hint="@string/enter_your_document_name"
+                        android:imeOptions="actionDone"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/colorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_floatingLabelAlwaysShown="false"
+                        app:met_floatingLabelAnimating="true"
+                        app:met_floatingLabelTextColor="@color/colorPrimary"
+                        app:met_textColor="@color/colorPrimary"
+                        app:met_textColorHint="#838383"
+                        tools:ignore="RtlSymmetry" />
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_select_document"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:gravity="center"
+                        android:padding="10.0dip"
+                        android:text="@string/add_documents"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10.0dip"
+                    android:visibility="gone">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/iv_manage_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_margin="20sp"
+                        android:scaleType="fitCenter"
+                        app:actualImageScaleType="fitXY"
+                        app:placeholderImage="@mipmap/doc_off"
+                        app:placeholderImageScaleType="fitXY" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_view_document_lyt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15.0dip">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/view_documents"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20.0dip"
+                    android:visibility="gone">
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_updatesettings"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45sp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:text="@string/manage_document_update_document"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_manage_document"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_emptyview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="@string/no_doucment_available"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

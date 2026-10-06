@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_job_inprogress"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_job_inprogres_title"
+            style="@style/AppThemeToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_alert_job_inprogress"
+            android:layout_alignBottom="@+id/iv_alert_job_inprogress"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:layout_toStartOf="@+id/iv_alert_job_inprogress"
+            android:foregroundGravity="center"
+            android:gravity="center|start"
+            android:text="@string/booking_id"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            tools:ignore="MissingPrefix" />
+
+        <ImageView
+            android:id="@+id/iv_alert_job_inprogress"
+            style="@style/AppThemeToolBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:layout_toStartOf="@+id/iv_menu_job_inprogress"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:src="@mipmap/ic_eme_alert"
+            android:visibility="invisible"
+            app:tint="@android:color/holo_red_dark" />
+
+        <ImageView
+            android:id="@+id/iv_menu_job_inprogress"
+            style="@style/AppThemeToolBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:src="@drawable/ic_menu_vertical"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_header_job_inprogress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbar_job_inprogress"
+        android:background="@color/transparent">
+
+        <include
+            android:id="@+id/lyt_fb_view"
+            layout="@layout/layout_facebook_ads_view" />
+
+        <RelativeLayout
+            android:id="@+id/rl_switch_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lyt_fb_view"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/gray_light"
+            android:padding="10dp">
+
+            <com.instaguard.provider.CustomViews.CustomSwitch.ToggleSwitch
+                android:id="@+id/switch_container_livetrack_jobinprogress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dip"
+                android:layout_marginTop="5dip"
+                android:layout_marginEnd="5dip"
+                android:layout_marginBottom="5dip"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:backgroundTint="@color/gray_very_light"
+                android:gravity="center"
+                android:padding="1dp"
+                android:textSize="14sp"
+                app:activeBgColor="@color/colorAccent"
+                app:activeTextColor="@color/white"
+                app:cornerRadius="5dp"
+                app:inactiveBgColor="@color/colorAccent_light"
+                app:inactiveTextColor="@color/white"
+                app:separatorColor="@color/gray_very_light"
+                app:textToggleLeft="@string/map_jopinprogress_live_track"
+                app:textToggleRight="@string/map_jopinprogress_job_in_progress"
+                app:toggleWidth="0dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_switch_lyt"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_baseline_info_20"
+                app:tint="@color/black" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_card_payment_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/wait_a_moment"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_card_payment_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/please_wait_user_can_able_to_pay_with_card_on_current_job"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_livetrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_colorprimary_fill"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Live Track"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_jobinprogress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_white_fill"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Job Inprogress"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_map_job_inprogress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_user_cancel_retry_top"
+            android:layout_below="@+id/tab_host"
+            android:visibility="visible">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <include
+                android:id="@+id/lyt_navigation"
+                layout="@layout/navigation_view"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lyt_navigation"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/normal"
+                    android:textColor="@color/white" />
+
+                <Switch
+                    android:id="@+id/switchm_traffic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/white"
+                    android:checked="true"
+                    android:thumbTint="@color/white"
+                    android:trackTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml"
+                    tools:targetApi="m" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/satellite"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_currentLoction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_shape_circle"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:visibility="gone"
+                android:onClick="currentLocationClick"
+                tools:ignore="OnClick,UnusedAttribute">
+
+                <ImageView
+                    android:id="@+id/img_currentLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_my_location" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_currentLoction1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_currentLoction"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_shape_circle"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:focusable="true"
+                android:visibility="gone">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/img_currentLocations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="10"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/rl_job_inprogress"
+            layout="@layout/layout_job_inprogress_view"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_user_cancel_retry_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_btn_slide_trip"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_accept_trip_cancel_retry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darker_gray"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/please_wait_for_user_confirm_to_begin_trip"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+            <!--user_accept_your_trip_amp_slide_to_begin_trip-->
+            <!--user_cancel_to_begin_trip-->
+
+            <RelativeLayout
+                android:id="@+id/rl_user_retry_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_accept_trip_cancel_retry"
+                android:visibility="gone">
+
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tv_user_cancel_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/user_cancel_to_begin_trip"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_user_cancel_label"
+                    android:orientation="horizontal">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/tv_retry_user_cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_user_cancel_label"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/retry"
+                        android:textColor="@color/white" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/tv_retry_user_cancel_trip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_user_cancel_label"
+                        android:layout_margin="5dp"
+                        android:layout_toStartOf="@+id/tv_retry_user_cancel"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rect_filled_colorprimary"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/cancel_trip"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--BOTTOM TRIP BUTTONS-->
+        <include layout="@layout/layout_job_inprogress_bottom_button_view" />
+        <!--BOTTOM TRIP BUTTONS-->
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/lyt_dialog_requesting"
+        layout="@layout/dialog_requesting"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_chat"
+        layout="@layout/activity_chat"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_call"
+        layout="@layout/activity_voice"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_card_payment"
+        layout="@layout/layout_card_payment_status"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_addtional_charge"
+        layout="@layout/dialog_addtional_charge"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_trip_summary"
+        layout="@layout/dialog_trip_summary"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/lyt_cash_payment"
+        layout="@layout/layout_cash_payment_status"
+        android:visibility="gone" />
+
+</RelativeLayout>

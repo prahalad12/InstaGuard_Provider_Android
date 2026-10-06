@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen tools:override="true" name="design_navigation_icon_padding">10dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!-- ExpirationPickerDialog dimens -->
+    <dimen name="expiration_picker_margin_top">20dp</dimen>
+    <dimen name="expiration_picker_margin_bottom">20dp</dimen>
+    <dimen name="expiration_picker_margin_side_big">60dp</dimen>
+    <dimen name="expiration_picker_margin_side_small">5dp</dimen>
+    <dimen name="compound_drawable_padding_default">8dp</dimen>
+
+    <!--Times Square calendar-->
+
+
+
+    <!--Switch-->
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_very_small">4dp</dimen>
+
+
+
+</resources>

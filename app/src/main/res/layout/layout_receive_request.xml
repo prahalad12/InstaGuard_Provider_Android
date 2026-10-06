@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/request_screen_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_request"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <com.instaguard.provider.CustomViews.CustomButton
+            android:id="@+id/btn_decline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_rect_filled_colorprimary"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:text="@string/request_decline"
+            android:textColor="@color/white" />
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_decline"
+            android:layout_alignBottom="@+id/btn_decline"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="0dp"
+            android:layout_toStartOf="@+id/btn_accept"
+            android:layout_toEndOf="@+id/btn_decline"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="@string/app_name_toolbar"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_decline"
+            android:layout_alignBottom="@+id/btn_decline"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="0dp"
+            android:layout_toStartOf="@+id/btn_accept"
+            android:layout_toEndOf="@+id/btn_decline"
+            android:padding="6dp"
+            android:src="@drawable/logo" />
+
+
+        <com.instaguard.provider.CustomViews.CustomButton
+            android:id="@+id/btn_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_rect_filled_colorprimary"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:contentDescription="@string/todo"
+            android:padding="10dp"
+            android:text="@string/request_accept"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_requestType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:gravity="center"
+                android:text="@string/request_job_request"
+                android:textColor="#ffffffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/locationAddressHintTxt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/locationAddressTxt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:id="@+id/frame_progressLayout"
+                android:layout_width="250.0dip"
+                android:layout_height="120.0dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10.0dip"
+                android:clickable="true"
+                android:focusable="true"
+                android:foregroundGravity="center"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/rl_progressLayout"
+                    android:layout_width="230.0dip"
+                    android:layout_height="100.0dip"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:layout_width="230.0dip"
+                        android:layout_height="105.0dip"
+                        android:background="@drawable/bg_timer_border" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_timer_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="00:00"
+                        android:textColor="#ffffffff"
+                        android:textSize="50.0sp" />
+                </RelativeLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_trip_type_request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Schedule Request"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_categoryName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10.0dip"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/request_category_tow_truck"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:id="@+id/tr_start_date_time"
+                    android:visibility="visible">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_start_date_time_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10.0dip"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="@string/start_date_time"
+                        android:textColor="#ffffffff"
+                        android:textSize="16sp" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_start_date_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10.0dip"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:text="@string/start_date_time"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:id="@+id/tr_end_date_time"
+                    android:visibility="gone">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_end_date_time_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10.0dip"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:text="@string/end_date_time"
+                        android:textColor="#ffffffff"
+                        android:textSize="16sp" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_end_date_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10.0dip"
+                        android:layout_weight="1"
+                        android:gravity="center|end"
+                        android:text="@string/end_date_time"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_marginTop="10.0dip"
+                    android:alpha="0.8"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_job_loc_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/job_location"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_pickup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/pickup_location"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_pickup_loc_req"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="--"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_marginTop="10.0dip"
+                    android:alpha="0.8"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_drop_req"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/request_drop"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_drop_loc_req"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="--"
+                    android:textColor="@color/white"
+                    android:textDirection="locale"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_marginTop="10.0dip"
+                    android:alpha="0.8"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_emergency_msg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/emergency_instruction"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_emergency_msg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="--------"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_marginTop="10.0dip"
+                    android:alpha="0.8"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_special_inst"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/request_special_instruction"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_special_instr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="--------"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_marginTop="10.0dip"
+                    android:alpha="0.8"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="@string/no_of_guards"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_count"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="--------"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.4dp"
+                    android:layout_marginTop="10.0dip"
+                    android:alpha="0.8"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="No of Days"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/tx_days"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:gravity="center"
+                    android:text="--------"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_weight="0.0"
+        android:background="#ff4b4b4b" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_user_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0"
+        android:background="@color/white"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:padding="10.0dip">
+
+        <com.instaguard.provider.Helpers.RatingBar.SimpleRatingBar
+            android:id="@+id/ratingBar_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:srb_borderColor="@color/colorPrimary"
+            app:srb_fillColor="@color/colorPrimary"
+            app:srb_numberOfStars="5"
+            app:srb_starSize="20sp"
+            app:srb_stepSize="0.5" />
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_User_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:gravity="end"
+            android:hint="username"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

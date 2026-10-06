@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_parent_view_manage_sub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_manage_sub_service"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    style="@style/AppThemeToolBar"
+                    android:contentDescription="@string/todo"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_whitearrow" />
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/imgbtn_back"
+                    android:layout_alignBottom="@+id/imgbtn_back"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_toStartOf="@+id/iv_menu_profile"
+                    android:layout_toEndOf="@+id/imgbtn_back"
+                    android:foregroundGravity="center"
+                    android:gravity="center|start"
+                    android:text="@string/manage_services_title"
+                    style="@style/AppThemeToolBar"
+                    tools:ignore="MissingPrefix" />
+
+                <ImageView
+                    android:id="@+id/iv_menu_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="top|right"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/ic_menu_vertical"
+                    android:contentDescription="@string/todo"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    tools:ignore="RtlHardcoded" />
+            </RelativeLayout>
+
+        </android.widget.Toolbar>
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_manage_service_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_manage_sub_service"
+            android:layout_margin="5dp"
+            android:padding="3dp"
+            android:text="@string/manage_services_select_category_below_to_add_services_you_are_going_to_provide"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_manage_sub_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_manage_service_content"
+            android:layout_above="@+id/rl_booknw_bookltr"
+            android:layout_margin="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_booknw_bookltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                tools:ignore="UselessParent">
+
+
+                <com.instaguard.provider.CustomViews.CustomButton
+                    android:id="@+id/btn_update_services"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:text="@string/manage_services_update_services"
+                    android:textColor="@color/white" />
+
+                <com.instaguard.provider.CustomViews.CustomButton
+                    android:id="@+id/btn_booklater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:text="Book Later"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+

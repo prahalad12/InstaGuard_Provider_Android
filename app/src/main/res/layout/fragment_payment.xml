@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_mywallet"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:ignore="UselessParent">
+
+        <android.widget.Toolbar
+            android:id="@+id/toolbar_payment"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_toolbar_gradient">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                style="@style/AppThemeToolBar"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="40dp"
+                android:gravity="center"
+                android:text="Card Details"
+                android:textAllCaps="true"
+                style="@style/AppThemeToolBar"
+                tools:ignore="MissingPrefix" />
+
+        </android.widget.Toolbar>
+
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/toolbar_payment"
+            android:background="@color/bg_gray_common">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_header_card_num"
+                    android:layout_width="fill_parent"
+                    android:layout_height="190.0dip"
+                    android:background="@color/colorPrimary">
+
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_card_numer_title"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30.0dip"
+                        android:padding="10.0dip"
+                        android:text="Card Number"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="#ffffffff"
+                        android:textSize="25.0sp" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_card_number"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_card_numer_title"
+                        android:gravity="center"
+                        android:text="XXXX XXXX XXXX 1111"
+                        android:textAllCaps="true"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_change_btn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginEnd="10.0dip"
+                        android:background="@color/colorPrimary"
+                        app:cardElevation="0.0dip">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:orientation="vertical">
+
+
+                            <com.instaguard.provider.CustomViews.CustomButton
+                                android:id="@+id/btn_change_card_details"
+                                android:layout_width="fill_parent"
+                                android:layout_height="45sp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_rect_filled_colorprimary"
+                                android:text="change"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:orientation="vertical">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_notes"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10.0dip"
+                        android:text="NOTES"
+                        android:textColor="#ffec1414"
+                        android:textSize="18sp" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_card_details"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="10.0dip"
+                        app:cardBackgroundColor="#ffffffff">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_type_label"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="Card Type"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_type"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="Visa"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_num_label"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="Card Number"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_num"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="4111 1111 1111"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_exp_label"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="Expiry"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_exp"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="12/2023"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_cvv_label"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="cvv"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+
+                                <com.instaguard.provider.CustomViews.CustomTextView
+                                    android:id="@+id/txt_card_cvv"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.0"
+                                    android:gravity="start"
+                                    android:padding="10.0dip"
+                                    android:text="123"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="#ff272727"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</FrameLayout>

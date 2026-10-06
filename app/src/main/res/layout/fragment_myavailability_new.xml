@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <android.widget.Toolbar
+        android:id="@+id/toolbar_myavailabilitysub"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                style="@style/AppThemeToolBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/todo"
+                android:padding="10dp"
+                android:src="@drawable/ic_back_whitearrow" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_myavailabilitysub"
+                style="@style/AppThemeToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="0dp"
+                android:layout_toStartOf="@+id/txt_today"
+                android:layout_toEndOf="@+id/imgbtn_back"
+                android:foregroundGravity="center"
+                android:gravity="center|start"
+                android:text="@string/myavailability_my_availability"
+                tools:ignore="MissingPrefix" />
+
+
+            <ImageView
+                android:id="@+id/iv_menu_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_menu_vertical"
+                android:contentDescription="@string/todo"
+                android:padding="5dp"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded" />
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imgbtn_back"
+                android:layout_alignBottom="@+id/imgbtn_back"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_baseline_edit_calendar_24"
+                android:drawablePadding="5dp"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:text="@string/today"
+                android:textColor="@color/white"
+                tools:targetApi="m" />
+
+        </RelativeLayout>
+
+    </android.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_updateavailable"
+        android:layout_below="@+id/toolbar_myavailabilitysub"
+        android:background="@color/bg_gray_common">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<devs.mulham.horizontalcalendar.HorizontalCalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:colorBottomText="@color/colorAccent_light"
+                app:colorMiddleText="@color/colorAccent_light"
+                app:colorTopText="@color/colorAccent_light"
+                app:fastScrollEnabled="false"
+                app:textColorSelected="@color/colorPrimaryDark" />-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.instaguard.provider.CustomViews.CustomButton
+                        android:id="@+id/btn_select_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_baseline_edit_calendar_24"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/txt_header_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/myavailablitysub_header"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/iv_checkbox"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/myavailablitysub_header"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/iv_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="@string/select_all"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@color/bg_gray_common" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_myavailablity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:paddingTop="5dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="9"
+                tools:itemCount="5"
+                tools:listitem="@layout/adapter_myavailability_new" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.instaguard.provider.CustomViews.CustomButton
+        android:id="@+id/btn_updateavailable"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_rect_filled_colorprimary"
+        android:text="@string/update_record"
+        android:textColor="@color/white" />
+
+    <FrameLayout
+        android:id="@+id/frame_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
+</RelativeLayout>

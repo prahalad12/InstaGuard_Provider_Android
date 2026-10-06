@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/ll_card_payment_statu_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.instaguard.provider.CustomViews.CustomTextView
+            android:id="@+id/txt_cash_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_rect_filled_colorprimary"
+            android:drawableStart="@drawable/ic_cash_payout"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white"
+            android:foregroundGravity="center"
+            android:gravity="center|end"
+            android:padding="10dp"
+            android:text="@string/got_cash"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded"
+            tools:targetApi="m" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_finish_trip"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/bg_rect_filled_colorprimary"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <com.instaguard.provider.CustomViews.CustomTextView
+                android:id="@+id/btn_card_payment"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bg_rect_filled_colorprimary"
+                android:drawableEnd="@drawable/ic_baseline_chevron_right_24"
+                android:drawableTint="@color/white"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/finish"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="MissingPrefix,RelativeOverlap,RtlHardcoded"
+                tools:targetApi="m" />
+            <!--bg_rect_filled_colorprimary-->
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+</RelativeLayout>

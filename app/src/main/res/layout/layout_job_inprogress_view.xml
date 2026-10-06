@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/rl_user_cancel_retry_top"
+    android:layout_below="@+id/tab_host"
+    android:background="@color/white"
+    android:visibility="visible"
+    tools:showIn="@layout/layout_job_inprogress">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollview_job_inprogress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/ll_header_job_inprogress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_parent_lyt_user_details_jobinprogress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffe4e4e4"
+                android:orientation="horizontal"
+                android:paddingTop="10.0dip"
+                android:paddingBottom="10.0dip"
+                android:visibility="visible">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_user_prof_pic_job_inprogress"
+                    android:layout_width="45.0dip"
+                    android:layout_height="45.0dip"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="5dip"
+                    android:background="@drawable/logo_circle"
+                    android:scaleType="fitXY"
+                    app:placeholderImage="@mipmap/male"
+                    app:placeholderImageScaleType="fitXY"
+                    app:roundedCornerRadius="0dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_toStartOf="@+id/ll_call_msg_lyt"
+                    android:layout_toEndOf="@+id/iv_user_prof_pic_job_inprogress"
+                    android:orientation="vertical">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_username_job_inprogress"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start|center"
+                        android:maxLines="1"
+                        android:text="@string/app_name"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_company_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start|center"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_job_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start|center"
+                        android:text="@string/pickup_address"
+                        android:textAlignment="viewStart"
+                        android:textColor="#ff1e1e1e"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:visibility="gone" />
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_job_days"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start|center"
+                        android:text="@string/pickup_address"
+                        android:textAlignment="viewStart"
+                        android:textColor="#ff1e1e1e"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:visibility="gone" />
+
+                    <com.instaguard.provider.Helpers.RatingBar.SimpleRatingBar
+                        android:id="@+id/ratingbar_job_inprogress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:longClickable="false"
+                        android:padding="2.0dip"
+                        android:textAlignment="viewStart"
+                        app:srb_borderColor="@color/colorAccent"
+                        app:srb_fillColor="@color/colorPrimary"
+                        app:srb_numberOfStars="5"
+                        app:srb_rating="2.5"
+                        app:srb_starBorderWidth="2"
+                        app:srb_starSize="16sp"
+                        app:srb_stepSize="0.5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_call_msg_lyt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center|end"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/img_phone"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center|start"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/ic_circle_elevation_white"
+                        android:contentDescription="@string/todo"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_baseline_phone_24"
+                        app:tint="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:id="@+id/img_message"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center|end"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/ic_circle_elevation_white"
+                        android:contentDescription="@string/todo"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_baseline_message_24"
+                        app:tint="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:id="@+id/headerIndicator"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="3dp"
+                        android:background="@drawable/ic_circle_elevation_white"
+                        android:contentDescription="@string/todo"
+                        android:padding="8dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_pickup_job_inprogress"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_call_msg_lyt"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_toEndOf="@+id/iv_user_prof_pic_job_inprogress"
+                    android:gravity="start|center"
+                    android:text="@string/pickup_address"
+                    android:textAlignment="viewStart"
+                    android:textColor="#ff1e1e1e"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+
+            <!--Backup & Cancel job-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal">
+
+                <com.instaguard.provider.CustomViews.CustomButton
+                    android:id="@+id/btn_sos_backup_required_job_inprogress"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:contentDescription="@string/todo"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/backup_required"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:visibility="gone" />
+
+                <com.instaguard.provider.CustomViews.CustomButton
+                    android:id="@+id/btn_call_jobs_job_inprogress"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rect_filled_colorprimary"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:contentDescription="@string/todo"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/cancel_job"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_extra_hours_job_inprogress_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_rect_border"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.instaguard.provider.Helpers.ExpansionPanelLayout.ExpansionHeader
+                    android:id="@+id/expHeader_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    app:expansion_headerIndicator="@id/headerIndicator_extend"
+                    app:expansion_layout="@id/expansionLayout_extend"
+                    app:expansion_toggleOnClick="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:padding="2dp">
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            style="@style/AppThemeToolBarCenter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/headerIndicator_extend"
+                            android:layout_alignBottom="@+id/headerIndicator_extend"
+                            android:layout_toStartOf="@+id/headerIndicator_extend"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="@string/extend_hrs"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/headerIndicator_extend"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:background="@drawable/ic_circle_elevation_white"
+                            android:contentDescription="@string/todo"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_expansion_header_indicator_grey_24dp"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_extra__hrs_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/extend_hrs"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                </com.instaguard.provider.Helpers.ExpansionPanelLayout.ExpansionHeader>
+
+                <com.instaguard.provider.Helpers.ExpansionPanelLayout.ExpansionLayout
+                    android:id="@+id/expansionLayout_extend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expansion_expanded="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.3dp"
+                            android:alpha="0.6"
+                            android:background="@color/gray_black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_extra_no_of_hrs_label"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:padding="5dp"
+                                android:text="@string/extend_no_of_hrs"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center"
+                                android:padding="5dp"
+                                android:text=":"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_extra_no_of_hrs"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:padding="5dp"
+                                android:text="5 hrs"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_extend_no_of_hrs_amount_label"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:padding="5dp"
+                                android:text="@string/extend_no_of_hrs_amount"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center"
+                                android:padding="5dp"
+                                android:text=":"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_extend_no_of_hrs_amount"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:padding="5dp"
+                                android:text="$ 5"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:visibility="gone">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_extend_vat_amount_label"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="start|center"
+                                android:padding="5dp"
+                                android:text="@string/extend_vat_amount"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start|center"
+                                android:padding="5dp"
+                                android:text=":"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txt_extend_vat_amount"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:padding="5dp"
+                                android:text="$ 5"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+
+                    </LinearLayout>
+
+                </com.instaguard.provider.Helpers.ExpansionPanelLayout.ExpansionLayout>
+
+            </LinearLayout>
+
+            <!--backup_requested_guard_details-->
+            <RelativeLayout
+                android:id="@+id/rl_backup_requested_guard_details_lyt"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_rect_border"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip"
+                android:visibility="gone">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/txt_backup_requested_guard_details_job_inprogress"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_toEndOf="@+id/iv_backup_requested_guard__prof_pic_job_inprogress"
+                    android:gravity="start|center"
+                    android:text="@string/backup_requested_guard_details"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_backup_requested_guard__prof_pic_job_inprogress"
+                    android:layout_width="45.0dip"
+                    android:layout_height="45.0dip"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="5dip"
+                    android:background="@drawable/logo_circle"
+                    android:scaleType="fitXY"
+                    app:placeholderImage="@mipmap/male"
+                    app:placeholderImageScaleType="fitXY"
+                    app:roundedCornerRadius="0dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_backup_requested_guard_details_job_inprogress"
+                    android:layout_marginTop="5dip"
+                    android:layout_marginEnd="0dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_toStartOf="@+id/ll_backup_requested_guard_call_msg_lyt"
+                    android:layout_toEndOf="@+id/iv_backup_requested_guard__prof_pic_job_inprogress"
+                    android:orientation="vertical">
+
+                    <com.instaguard.provider.CustomViews.CustomTextView
+                        android:id="@+id/txt_backup_requested_guard__job_inprogress"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="5.0dip"
+                        android:gravity="start|center"
+                        android:maxLines="1"
+                        android:text="@string/app_name"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.instaguard.provider.Helpers.RatingBar.SimpleRatingBar
+                        android:id="@+id/backup_requested_guard_ratingbar_job_inprogress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="5dip"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:longClickable="false"
+                        android:padding="2.0dip"
+                        android:textAlignment="viewStart"
+                        app:srb_borderColor="@color/colorAccent"
+                        app:srb_fillColor="@color/colorPrimary"
+                        app:srb_numberOfStars="5"
+                        app:srb_rating="4.5"
+                        app:srb_starBorderWidth="2"
+                        app:srb_starSize="16sp"
+                        app:srb_stepSize="0.5"
+                        tools:targetApi="m" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_backup_requested_guard_call_msg_lyt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|end"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/img_backup_requested_guard_phone"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center|start"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/ic_circle_elevation_white"
+                        android:contentDescription="@string/todo"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_baseline_phone_24"
+                        app:tint="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:id="@+id/img_backup_requested_guard_message"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center|end"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/ic_circle_elevation_white"
+                        android:contentDescription="@string/todo"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_baseline_message_24"
+                        app:tint="@color/colorPrimaryDark" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_break_pt_job_inprogress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-1.0dip"
+                android:contentDescription="@string/todo"
+                android:scaleType="fitXY"
+                android:src="@drawable/bottom_strip_repeat"
+                android:visibility="gone"
+                app:tint="#ffe4e4e4" />
+
+            <LinearLayout
+                android:id="@+id/ll_timerarea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.instaguard.provider.CustomViews.CustomTextView
+                    android:id="@+id/timerHinttext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/job_in_progress"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22.0sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginEnd="20.0dip"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txtTimerHour"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3.0"
+                                android:background="@drawable/timer_bg"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textColor="@android:color/white"
+                                android:textSize="50.0sp" />
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10.0dip"
+                                android:paddingEnd="10.0dip"
+                                android:text=":"
+                                android:textColor="@android:color/black"
+                                android:textSize="50.0dip" />
+                        </LinearLayout>
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            android:id="@+id/txt_TimerHour"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.0dip"
+                            android:layout_marginEnd="10.0dip"
+                            android:layout_weight="1.0"
+                            android:gravity="center_horizontal"
+                            android:text="Hour"
+                            android:textAllCaps="true"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.instaguard.provider.CustomViews.CustomTextView
+                                android:id="@+id/txtTimerMinute"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3.0"
+                                android:background="@drawable/timer_bg"
+                                android:gravity="center"
+                                android:text="00"
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textColor="@android:color/white"
+                                android:textSize="50.0sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="10.0dip"
+                                android:paddingEnd="10.0dip"
+                                android:text=":"
+                                android:textColor="@android:color/black"
+                                android:textSize="50.0dip" />
+                        </LinearLayout>
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            android:id="@+id/txt_TimerMinute"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.0dip"
+                            android:layout_marginEnd="10.0dip"
+                            android:layout_weight="1.0"
+                            android:gravity="center_horizontal"
+                            android:text="Minute"
+                            android:textAllCaps="true"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            android:id="@+id/txtTimerSecond"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.0"
+                            android:background="@drawable/timer_bg"
+                            android:gravity="center"
+                            android:text="00"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@android:color/white"
+                            android:textSize="50.0sp" />
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            android:id="@+id/txt_TimerSecond"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.0dip"
+                            android:layout_weight="1.0"
+                            android:gravity="center_horizontal"
+                            android:text="Second"
+                            android:textAllCaps="true"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/seperationLine2"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:layout_marginTop="20.0dip"
+                android:background="#ffdadada"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_job_inprogress"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <!--ll_backup_guard_list_view_lyt-->
+                <LinearLayout
+                    android:id="@+id/ll_backup_guard_list_view_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_rect_border"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rect_top_curve"
+                        android:backgroundTint="@color/primary_blue_light_alpha"
+                        android:padding="3dp">
+
+                        <com.instaguard.provider.CustomViews.CustomTextView
+                            style="@style/AppThemeToolBarCenter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="@string/backup_guard_details"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_guard_details_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:spanCount="1"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/adapter_backup_guard_details_list_main" />
+
+                </LinearLayout>
+
+                <include layout="@layout/layout_jobinprogress_you_countlist" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
+
+        
